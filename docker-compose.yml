@@ -3,7 +3,7 @@ version: '3.3'
 services:
  php:
   build:
-   context: .
+   context: /php
    dockerfile: dockerfile
   container_name: php73
   depends_on:

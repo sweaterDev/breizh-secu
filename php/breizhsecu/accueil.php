@@ -24,8 +24,6 @@ include("inc/top.php");
 		  <ul class="thumbnails">
 			<li class="span4">
 			  <div class="thumbnail">
-				
-                
 				<a  href="mesinfos.php"><img src="http://localhost/breizhsecu/images/comptes/<?php echo $USER; ?>.jpg" alt=""  ></a>
 				<div class="caption">
 				 <a  href="mesinfos.php"><h5>Mes infos</h5></a>
