@@ -4,7 +4,7 @@ namespace DAO;
 include('Connexion.php');
 require_once('..\model\Compte.php');
 
-use model\Compte;
+use Compte;
 use PDO;
 use PDOException;
 
@@ -29,19 +29,18 @@ class CompteDAO {
 
         $comptes = [];
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $comptes[] = new Compte($row['id'], $row['nom'], $row['prenom'], $row['email'], $row['identifiant'], $row['password'], $row['password'], $row['adresse'], $row['statut']);
+            $comptes[] = new Compte($row['nom'], $row['prenom'], $row['email'], $row['password'], $row['adresse'], $row['statut']);
         }
         return $comptes;
     }
 
     public function insert($inscription) {
         try {
-            $stmt = $this->pdo->prepare("INSERT INTO compte (nom, prenom, email, identifiant, password, adresse, statut) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $this->pdo->prepare("INSERT INTO compte (nom, prenom, email, password, adresse, statut) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->execute([
                 $inscription->getNom(),
                 $inscription->getPrenom(),
                 $inscription->getEmail(),
-                $inscription->getIdentifiant(),
                 $inscription->getPassword(), // Assurez-vous de traiter le mot de passe de manière sécurisée (ex : hashing)
                 $inscription->getAdresse(),
                 $inscription->getStatut()

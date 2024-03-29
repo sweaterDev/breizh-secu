@@ -1,6 +1,6 @@
 <?php
 namespace DAO;
-use model\Compte;
+use Compte;
 
 include('Connexion.php');
 global $CONFIG;
@@ -15,14 +15,25 @@ class InscriptionController2{
     }
 
     public function traiterInscription(){
-        $compte = new Compte(null, $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['identifiant'], $_POST['login'], $_POST['password'], $_POST['adresse'], 'Utilisateur');
+        // Valider et filtrer les données entrantes
+        $nom = filter_var($_POST['nom'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $prenom = filter_var($_POST['prenom'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hachage sécurisé du mot de passe
+        $adresse = filter_var($_POST['adresse'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+        // Création d'un objet Compte
+        $compte = new Compte($nom, $prenom, $email, $password, $adresse, 'Utilisateur');
+
         // Insertion du compte dans la base de données
         $this->compteDAO->insert($compte);
     }
-
 }
+
+// Instanciation du contrôleur et traitement de l'inscription
 $controller = new InscriptionController2();
 $controller->traiterInscription();
-header('Location: http://localhost/Breizhsecu3/DAO/CompteController.php');
 
+// Redirection après l'inscription
+header('Location: http://localhost/Breizhsecu3/DAO/CompteController.php');
 ?>

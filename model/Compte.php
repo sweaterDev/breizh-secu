@@ -2,55 +2,33 @@
 
 class Compte{
 
-    private $id;
     private $nom;
     private $prenom;
     private $Email;
-    private $Identifiant;
-    private $login;
     private $password;
     private $adresse;
     private $statut;
 
     /**
-     * @param $id
+
      * @param $nom
      * @param $prenom
      * @param $Email
-     * @param $Identifiant
-     * @param $login
      * @param $password
      * @param $adresse
      * @param $statut
      */
-    public function __construct($id, $nom, $prenom, $Email, $Identifiant, $login, $password, $adresse, $statut)
+    public function __construct( $nom, $prenom, $Email, $password, $adresse, $statut)
     {
-        $this->id= $id;
+
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->Email = $Email;
-        $this->Identifiant = $Identifiant;
-        $this->login = $login;
         $this->password = $password;
         $this->adresse = $adresse;
         $this->statut = $statut;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed
@@ -100,37 +78,7 @@ class Compte{
         $this->Email = $Email;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getIdentifiant()
-    {
-        return $this->Identifiant;
-    }
 
-    /**
-     * @param mixed $Identifiant
-     */
-    public function setIdentifiant($Identifiant)
-    {
-        $this->Identifiant = $Identifiant;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLogin()
-    {
-        return $this->login;
-    }
-
-    /**
-     * @param mixed $login
-     */
-    public function setLogin($login)
-    {
-        $this->login = $login;
-    }
 
     /**
      * @return mixed
