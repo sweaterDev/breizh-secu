@@ -7,26 +7,32 @@ Ce projet vise à renforcer la sécurité d'un site web existant en identifiant 
 - Identifier les vulnérabilités de sécurité existantes dans le site web.
 - Mettre en œuvre des solutions pour corriger ces vulnérabilités et renforcer la sécurité.
 - Effectuer des tests de sécurité pour s'assurer de l'efficacité des mesures mises en place.
-- Documenter les processus de renforcement de la sécurité pour référence future.
+
 
 ## Fonctionnalités clés
 - Analyse des vulnérabilités : Identification des points faibles potentiels dans le code source, la configuration du serveur et d'autres aspects du site web.
 - Implémentation de correctifs : Application de correctifs appropriés pour éliminer les vulnérabilités identifiées.
 - Tests de sécurité : Exécution de tests de pénétration et de tests d'intrusion pour évaluer la robustesse de la sécurité.
-- Documentation : Documentation détaillée des mesures de sécurité mises en place et des processus suivis.
+
 
 ## Technologies utilisées
-- Langages de programmation : (ex. PHP, Python, JavaScript)
-- Frameworks et bibliothèques : (ex. Laravel, Django, React)
-- Outils de sécurité : (ex. OWASP ZAP, Burp Suite, Nmap)
-- Systèmes de gestion de base de données : (ex. MySQL, PostgreSQL)
+- Docker : Pour la gestion des conteneurs et la mise en place de l'environnement de développement.
+- PHP : Langage de programmation utilisé pour le développement du site web.
+- MySQL : Système de gestion de base de données relationnel utilisé pour stocker les données du site web.
 
-## Contribution
-Les contributions au projet sont les bienvenues. Si vous avez des suggestions, des idées d'amélioration ou si vous souhaitez rapporter des problèmes de sécurité, veuillez soumettre une issue ou une pull request.
+## Prérequis
+- Docker installé sur votre système.
+- Compréhension de base de la gestion des conteneurs Docker.
 
-## Licence
-Ce projet est sous licence [MIT License](LICENSE).
-
+## Configuration
+1. Cloner ce dépôt sur votre machine locale.
+2. Dans le répertoire du projet, exécuter la commande `docker-compose up -d` pour démarrer les conteneurs Docker.
 ---
 
-Pour toute question ou préoccupation, veuillez contacter [nom du responsable] à [adresse e-mail].
+By : 
+
+Sebastien
+Ilyes 
+Yanis 
+Melissa
+Amadou 
