@@ -78,8 +78,9 @@ Navigation Bar Section
 			<ul class="nav">
 			  <li class="active"><a href="index.php">Accueil	</a></li>
 			  <?php
-			  foreach($tabcat as $numerocat=>$nomcat){
-				  echo "<li class=\"\"><a href=\"catalogue.php?cat=$numerocat\">$nomcat</a></li>";
+
+			  foreach($tabcat as $categorie){
+				  echo "<li class=\"\"><a href=\"catalogue.php?cat=$categorie->getId()\">$categorie->getTitre()(</a></li>";
 			  }
 			  ?>
 			 
@@ -107,8 +108,8 @@ Body Section
 <div class="well well-small">
 	<ul class="nav nav-list">
 	 <?php
-			  foreach($tabcat as $numerocat=>$nomcat){
-				  echo "<li><a href=\"catalogue.php?cat=$numerocat\"><span class=\"icon-chevron-right\"></span>$nomcat</a></li>";
+			  foreach($tabcat as $categorie){
+				  echo "<li><a href=\"catalogue.php?cat=$categorie->getId()\"><span class=\"icon-chevron-right\"></span>$categorie->getTitre()</a></li>";
 			  }
 			  ?>
 		

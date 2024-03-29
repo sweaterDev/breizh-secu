@@ -36,7 +36,8 @@
 				<a href="accueil.php"><span class="icon-user"></span> Mon compte</a> 
 				<a href="register.php"><span class="icon-edit"></span> S'enregistrer</a> 
 				<a href="contact.php"><span class="icon-envelope"></span> Contactez nous</a>
-				</div>
+				
+			</div>
 		</div>
 	</div>
 </div>
@@ -76,7 +77,12 @@ Navigation Bar Section
 		  <div class="nav-collapse">
 			<ul class="nav">
 			  <li class="active"><a href="index.php">Accueil	</a></li>
-			  
+			  <?php
+				include("../breizhsecu/func/categorie_inc.php");
+			  foreach($tabcat as $categorie){
+				  echo "<li class=\"\"><a href=\"catalogue.php?cat=$categorie->getId()\">$categorie->getTitre()(</a></li>";
+			  }
+			  ?>
 			 
 			</ul>
 			
@@ -101,7 +107,12 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-	
+	 <?php
+	 include("../breizhsecu/func/categorie_inc.php");
+			  foreach($tabcat as $categorie){
+				  echo "<li><a href=\"catalogue.php?cat=$categorie->getId()\"><span class=\"icon-chevron-right\"></span>$categorie->getTitre()</a></li>";
+			  }
+			  ?>
 		
 		<li style="border:0"> &nbsp;</li>
 </ul>

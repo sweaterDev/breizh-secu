@@ -4,7 +4,7 @@ session_start();
 include("DAO/Connexion.php");
 include("inc/utils.php");
 
-include("func/categorie_inc.php");
+include("DAO/CategorieDAO.php");
 include("func/produit_inc.php");
 include("func/panier_inc.php");
 include("func/compte_inc.php");
